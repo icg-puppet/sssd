@@ -117,8 +117,6 @@ class sssd (
   $legacy_package_names    = $sssd::params::legacy_package_names,
   $manage_authconfig       = $sssd::params::manage_authconfig,
   $authconfig_package_name = $sssd::params::authconfig_package_name,
-  $authconfig_pam_cmd      = $sssd::params::authconfig_pam_cmd,
-  $authconfig_enable       = $sssd::params::authconfig_enable
 
 ) inherits sssd::params {
 
