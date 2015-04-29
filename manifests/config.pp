@@ -14,6 +14,14 @@ class sssd::config {
     mode    => '0600',
   }
 
+  if $sssd::authconfig_enable {
+    exec { 'authconfig-sssd':
+      command     => $sssd::authconfig_pam_cmd,
+      refreshonly => true,
+      subscribe   => File['sssd_config_file']
+    }
+  }
+    
   case $sssd::mkhomedir {
     'enabled': {
       exec {'enable mkhomedir':

@@ -26,6 +26,8 @@ class sssd::params {
       $mkhomedir               = 'disabled'
       $enable_mkhomedir_cmd    = '/usr/sbin/authconfig --enablemkhomedir --update'
       $disable_mkhomedir_cmd   = '/usr/sbin/authconfig --disablemkhomedir --update'
+      $authconfig_pam_cmd      = '/usr/sbin/authconfig --enablesssd --enablesssdauth --enablelocauthorize --update'
+      $authconfig_enable       = true
       $pam_mkhomedir_check     = '/bin/grep -E \'^USEMKHOMEDIR=yes$\' /etc/sysconfig/authconfig'
       $manage_idmap            = true
       $idmap_package_name      = 'libsss_idmap'
